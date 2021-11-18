@@ -1,19 +1,22 @@
 import type { NextPage } from "next";
 
-type Foo = () => void;
-
-const foo1: Foo = () => {
-  alert("hello");
+const foo = (): never => {
+  throw new Error("foo");
 };
 
-const foo2 = (): void => {
-  alert("hello");
-};
+const bar = (bar: "a" | "b") => {
+  switch (bar) {
+    case "a":
+      return;
+    case "b":
+      bar;
+      return;
 
-function foo(): void {
-  alert("hello");
-  return;
-}
+    default:
+      bar;
+      break;
+  }
+};
 
 const Home: NextPage = () => {
   return <div>test</div>;
