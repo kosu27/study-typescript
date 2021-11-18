@@ -1,9 +1,18 @@
 import type { NextPage } from "next";
 
-const foo: unknown = "foo";
+type Foo = () => void;
 
-if (typeof foo === "string") {
-  foo.substr(2);
+const foo1: Foo = () => {
+  alert("hello");
+};
+
+const foo2 = (): void => {
+  alert("hello");
+};
+
+function foo(): void {
+  alert("hello");
+  return;
 }
 
 const Home: NextPage = () => {
