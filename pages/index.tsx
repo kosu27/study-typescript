@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 
-const foo = "foo" as const;
-let bar = foo;
+const foo: (number | string | boolean)[] = [1, 2, "3", true];
 
 const Home: NextPage = () => {
   return <div>test</div>;
